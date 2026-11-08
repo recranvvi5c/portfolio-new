@@ -10,6 +10,8 @@ export const profile = {
   portrait: "https://picsum.photos/seed/portrait-am/480/480",
   aboutImage: "https://picsum.photos/seed/workspace-am/640/720",
   cvUrl: "#",
+  calendarUrl: "#", // e.g. your Calendly or Cal.com link
+  replyTime: "Replies within one business day",
   socials: [
     { label: "GitHub", href: "https://github.com/recranvvi5c" },
     { label: "LinkedIn", href: "#" },

@@ -389,3 +389,60 @@ p { margin: 0 0 1em; color: var(--muted); }
   .job { flex-direction: column; align-items: flex-start; }
   .page-hero { padding: 60px 0 40px; }
 }
+
+/* ========== Contact page hero ========== */
+.contact-hero {
+  position: relative; padding: 90px 0 80px; overflow: hidden;
+  background-image: radial-gradient(color-mix(in srgb, var(--muted) 18%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.contact-hero::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 120px;
+  background: linear-gradient(transparent, var(--bg)); pointer-events: none;
+}
+.contact-hero > .container { position: relative; z-index: 1; }
+.contact-hero__top { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: end; margin-bottom: 2.5rem; }
+.contact-hero__text h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); max-width: 760px; }
+.contact-hero__text .lead { max-width: 560px; margin: 0; }
+
+.status-card {
+  display: flex; align-items: center; gap: .9rem; justify-self: end;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: .9rem 1.1rem;
+}
+.status-card img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
+.status-card strong { display: block; font-size: .95rem; }
+.status-card__state { display: inline-flex; align-items: center; gap: .45rem; font-size: .82rem; color: var(--muted); }
+.status-card__state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; }
+.status-card__state.is-on::before { background: #22c55e; box-shadow: 0 0 0 3px rgba(34, 197, 94, .2); }
+
+.options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.option {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem;
+  transition: transform .25s, border-color .25s;
+}
+.option:hover { transform: translateY(-4px); border-color: var(--accent); }
+.option h2 { font-size: 1.35rem; margin-bottom: .5rem; }
+.option p { font-size: .95rem; }
+.option__label { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; }
+.option__cta { margin-top: auto; font-weight: 700; color: var(--text); }
+.option__cta:hover { color: var(--accent); }
+.option__badge {
+  position: absolute; top: 1.1rem; right: 1.1rem; font-size: .72rem; font-weight: 700;
+  padding: .25rem .65rem; border-radius: 999px; color: #fff;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+.option__badge + .option__label { padding-right: 7.5rem; }
+.option--primary {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, var(--surface)), var(--surface) 60%);
+}
+.option--primary .option__label, .option--primary .option__cta { color: var(--accent); }
+.option--dashed { border-style: dashed; border-color: color-mix(in srgb, var(--accent-2) 60%, var(--border)); }
+.option--dashed:hover { border-color: var(--accent-2); }
+
+@media (max-width: 900px) {
+  .contact-hero__top { grid-template-columns: 1fr; align-items: start; }
+  .status-card { justify-self: start; }
+  .options { grid-template-columns: 1fr; }
+}
