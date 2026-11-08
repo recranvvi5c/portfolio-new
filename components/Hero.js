@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import Counter from "./Counter";
 import { profile, stats } from "@/data/content";
@@ -21,8 +22,8 @@ export default function Hero() {
             {profile.location.split(",")[0]}, working worldwide.
           </p>
           <div className="hero__cta">
-            <a href="#projects" className="btn">View my work</a>
-            <a href="#contact" className="btn btn--ghost">Get in touch</a>
+            <Link href="/case-studies" className="btn">View case studies</Link>
+            <Link href="/contact" className="btn btn--ghost">Get in touch</Link>
           </div>
           <ul className="stats">
             {stats.map((s) => (

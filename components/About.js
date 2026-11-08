@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import { profile } from "@/data/content";
 
@@ -17,7 +18,10 @@ export default function About() {
             database query. I&apos;ve worked with startups and established teams to launch web apps, dashboards and APIs.
           </p>
           <p>When I&apos;m not coding, you&apos;ll find me hiking, reading about design systems, or experimenting with new tools.</p>
-          <a href={profile.cvUrl} className="btn btn--ghost">Download CV</a>
+          <div className="hero__cta">
+            <Link href="/about" className="btn">More about me</Link>
+            <a href={profile.cvUrl} className="btn btn--ghost">Download CV</a>
+          </div>
         </Reveal>
       </div>
     </section>

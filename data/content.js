@@ -18,10 +18,58 @@ export const profile = {
 };
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  { label: "About", href: "/about" },
+  { label: "Case studies", href: "/case-studies" },
+  { label: "Insights", href: "/insights" },
+  { label: "Careers", href: "/careers" },
+];
+
+export const values = [
+  { icon: "◎", title: "Clarity first", text: "Simple solutions that are easy to understand, maintain and extend." },
+  { icon: "⚡", title: "Performance matters", text: "Fast pages and snappy interfaces are part of a good experience." },
+  { icon: "♿", title: "Built for everyone", text: "Accessibility is designed in from day one, not bolted on later." },
+  { icon: "🤝", title: "Honest collaboration", text: "Clear communication, realistic estimates and no surprises." },
+];
+
+export const process = [
+  { step: "01", title: "Discover", text: "We talk through goals, users and constraints to define what success looks like." },
+  { step: "02", title: "Design", text: "Wireframes and prototypes to validate ideas before writing production code." },
+  { step: "03", title: "Build", text: "Iterative development with frequent demos so you always see progress." },
+  { step: "04", title: "Launch & support", text: "Deployment, monitoring and improvements after go-live." },
+];
+
+export const openings = [
+  {
+    title: "Freelance UI Designer",
+    type: "Contract · Remote",
+    text: "Partner with me on client projects — wireframes, visual design and design systems.",
+    skills: ["Figma", "Design systems", "Prototyping"],
+  },
+  {
+    title: "Frontend Collaborator",
+    type: "Project-based · Remote",
+    text: "Help ship React / Next.js features on larger engagements when extra hands are needed.",
+    skills: ["React", "Next.js", "TypeScript"],
+  },
+  {
+    title: "Open-source Contributor",
+    type: "Volunteer · Remote",
+    text: "Contribute to my open-source UI kit and starter templates. Great for building a portfolio.",
+    skills: ["JavaScript", "CSS", "Git"],
+  },
+];
+
+export const perks = [
+  { icon: "🌍", title: "Fully remote", text: "Work from anywhere with flexible hours." },
+  { icon: "📚", title: "Learn together", text: "Pairing sessions, code reviews and shared resources." },
+  { icon: "💬", title: "Fair & transparent", text: "Clear scope, agreed rates and on-time payments." },
+];
+
+export const faqs = [
+  { q: "What kinds of projects do you take on?", a: "Web apps, dashboards, marketing sites and API work — typically from 2 weeks to 6 months." },
+  { q: "How soon can you start?", a: "Usually within 1–3 weeks. Reach out with your timeline and I'll let you know." },
+  { q: "Do you work with teams or solo founders?", a: "Both. I can join an existing team or own a project end-to-end." },
+  { q: "What's your typical response time?", a: "I reply to every message within one business day." },
 ];
 
 export const stats = [

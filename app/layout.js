@@ -1,4 +1,7 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import { profile } from "@/data/content";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -7,8 +10,11 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata = {
-  title: "Alex Morgan — Developer Portfolio",
-  description: "Portfolio of Alex Morgan, full-stack developer building fast, accessible web apps.",
+  title: {
+    default: `${profile.name} — Developer Portfolio`,
+    template: `%s · ${profile.name}`,
+  },
+  description: `Portfolio of ${profile.name}, ${profile.role.toLowerCase()} building fast, accessible web apps.`,
   icons: { icon: `${basePath}/favicon.svg` },
 };
 
@@ -21,7 +27,11 @@ export default function RootLayout({ children }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body id="top">{children}</body>
+      <body id="top">
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
