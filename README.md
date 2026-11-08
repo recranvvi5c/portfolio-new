@@ -1,26 +1,31 @@
 # Portfolio
 
-A responsive, single-page developer portfolio built with plain HTML, CSS and JavaScript.
+A responsive developer portfolio built with **Next.js (App Router) + React**, exported as a static site.
 
 ## Features
-- Dark / light theme toggle (teal + indigo accent)
+- Dark / light theme toggle (teal + indigo accent), no flash on load
 - Sections: hero, about, skills, projects (with filters), experience timeline, testimonials, contact
 - Scroll reveal animations and animated stats
 - Mobile menu, fully responsive
-- No build step
+- Static export (`out/`) that works on GitHub Pages, Netlify, Vercel or any host
 
-## Customize
-- **Content:** edit `index.html` (name, text, projects, links).
-- **Colors:** change the CSS variables at the top of `styles.css` (`--accent`, `--accent-2`).
-- **Images:** sample images come from [picsum.photos](https://picsum.photos). Replace the `src` URLs with your own files in `assets/`.
-- **Contact form:** currently a demo. Connect it to a service like Formspree or Netlify Forms.
-
-## Run locally
-Open `index.html` in a browser, or serve it:
+## Getting started
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static site in ./out
 ```
 
+## Customize
+- **Content:** everything (name, bio, projects, experience, testimonials, links) lives in `data/content.js`.
+- **Layout / sections:** components are in `components/`, page composition is in `app/page.js`.
+- **Colors:** change the CSS variables at the top of `app/globals.css` (`--accent`, `--accent-2`).
+- **Images:** sample images come from [picsum.photos](https://picsum.photos). Put your own files in `public/` and reference them as `/my-photo.jpg` in `data/content.js`.
+- **Contact form:** currently a demo (`components/Contact.js`). Connect it to Formspree, Resend, etc.
+
 ## Deploy to GitHub Pages
-Settings → Pages → Source: `main` branch, `/ (root)`.
+A workflow is included at `.github/workflows/deploy.yml`.
+
+1. In the repo, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Push to `main`. The site will be published at `https://<username>.github.io/<repo>/`.
